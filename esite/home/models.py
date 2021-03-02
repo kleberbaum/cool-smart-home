@@ -13,6 +13,7 @@ from wagtail.core.models import Page
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from esite.utils.models import BasePage
+from esite.colorfield.fields import ColorField
 
 # Create your homepage related models here.
 
@@ -55,6 +56,8 @@ class HomePage(BasePage):
 
     class Meta:
         verbose_name = "Home Page"
+
+    led-color = ColorField(null=True, blank=False, help_text="Select color that fitd your mood.")
 
     city = models.CharField(null=True, blank=False, max_length=255)
     zip_code = models.CharField(null=True, blank=False, max_length=255)

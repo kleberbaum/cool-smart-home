@@ -1,3 +1,28 @@
+##############################################################################
+#
+# MS Teams Presence LED changer
+#
+# Parses MS Teams logs.txt file to get current presence status and fires off
+# some action based off that.
+#
+# Easier than getting access to the Microsoft Graph API to get presence.
+#
+# Valid presence statuses I've found:
+#   found status: Available
+#   found status: Busy
+#   found status: DoNotDisturb
+#   found status: InAMeeting
+#   found status: Presenting
+#   found status: OnThePhone
+#   found status: Away
+#   found status: BeRightBack
+#
+#   found status: NewActivity
+#   found status: ConnectionError
+#   found status: Unknown
+#
+##############################################################################
+
 import os
 import re
 import requests
