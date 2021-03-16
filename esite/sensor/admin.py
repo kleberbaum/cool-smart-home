@@ -5,12 +5,12 @@ from wagtail.contrib.modeladmin.options import (
     modeladmin_register,
 )
 
-from .models import Light
+from .models import Sensor
 
 
-class Lightadmin(ModelAdmin):
-    model = Light
-    menu_label = "Lights"
+class Sensoradmin(ModelAdmin):
+    model = Sensor
+    menu_label = "Sensors"
     menu_icon = "fa-lightbulb-o"
     menu_order = 290
     add_to_settings_menu = False
@@ -38,7 +38,7 @@ class Lightadmin(ModelAdmin):
 #     )
 
 
-modeladmin_register(Lightadmin)
+modeladmin_register(Sensoradmin)
 
 # SPDX-License-Identifier: (EUPL-1.2)
 # Copyright © 2019-2020 Simon Prast

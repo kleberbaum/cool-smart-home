@@ -30,6 +30,8 @@ INSTALLED_APPS = [
     "esite.images",
     "esite.navigation",
     "esite.search",
+    "esite.light",
+    "esite.sensor",
     # Our own pages
     "esite.colorfield",
     "esite.home",
