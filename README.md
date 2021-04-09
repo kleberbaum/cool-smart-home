@@ -150,7 +150,6 @@ Funktioniert nur mit esp8266 basierenden Geräten
 Neue Tuya Geräte basieren auf WB3S
 Wichtig anderer Client im Setup WLAN
 
-![image](https://user-images.githubusercontent.com/26285351/114192082-5f940600-994d-11eb-86f9-673bb76614d3.png)
 ![image](https://user-images.githubusercontent.com/26285351/114192258-90743b00-994d-11eb-993e-bb7d57836457.png)
 ![image](https://user-images.githubusercontent.com/26285351/114192275-9702b280-994d-11eb-9c7c-4f1021d76501.png)
 ![image](https://user-images.githubusercontent.com/26285351/114192283-99fda300-994d-11eb-9a04-f3a9ebd126e7.png)
