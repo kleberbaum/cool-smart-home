@@ -14,9 +14,6 @@
   <a href="https://github.com/kleberbaum/smart-home/issues/new?template=bug_report.md">Report bug</a>
   ·
   <a href="https://github.com/kleberbaum/smart-home/issues/new?template=feature_request.md">Request feature</a>
-  <br>
-  <br>
-  <img src="https://api.codacy.com/project/badge/Grade/20d80a1790c44c90a3376e77d34a99ff" />
 </p>
 
 ## Table of contents
