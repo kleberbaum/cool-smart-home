@@ -145,9 +145,6 @@ those rules whenever possible.
 
 ## [](#device-setup)Device Setup
 ![image](https://user-images.githubusercontent.com/26285351/114192059-5acf5200-994d-11eb-9f60-2aaf44cc45ee.png)
-
-## [](#mqtt)Mqtt
-
 10 Minuten Setup
 Funktioniert nur mit esp8266 basierenden Geräten
 Neue Tuya Geräte basieren auf WB3S
@@ -158,6 +155,10 @@ Wichtig anderer Client im Setup WLAN
 ![image](https://user-images.githubusercontent.com/26285351/114192275-9702b280-994d-11eb-9c7c-4f1021d76501.png)
 ![image](https://user-images.githubusercontent.com/26285351/114192283-99fda300-994d-11eb-9a04-f3a9ebd126e7.png)
 ![image](https://user-images.githubusercontent.com/26285351/114192306-9ff38400-994d-11eb-9b79-e062208e3708.png)
+
+## [](#mqtt)Mqtt
+
+
 
 
 ## [](#rest)REST
