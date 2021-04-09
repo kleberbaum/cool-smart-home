@@ -39,39 +39,41 @@ from esite.colorfield.fields import ColorField
 from .blocks import AttendeeBlock, TagBlock
 from .validators import validate_audio_file
 
+config_default = """[
+    {"symbol": ""},
+    {"name": " Name: "},
+    {"price_btc": " Price in BTC: "},
+    {"price": " Price: "},
+    {"percent_change_24h": " - 24 Hour Percent Change: "},
+    {"market_cap": " Market Cap: "},
+    {"volume_24h": " 24 Hour Volume: "},
+    {"url_shares": " URL Shares: "},
+    {"reddit_posts": " Reddit Posts: "},
+    {"tweets": " Tweets: "},
+    {"news": " News: "},
+]"""
 
 class Sensor(models.Model):
-    title = models.CharField(null=False, blank=False, max_length=32)
-    topic = models.CharField(null=False, blank=False, max_length=32, default="server/mqtt-test/COMMAND")
-    temperature = models.FloatField(null=True, blank=True, validators=[validators.MaxValueValidator(100), validators.MinValueValidator(0)], default=0.5)
-    humidity = models.FloatField(null=True, blank=True, validators=[validators.MaxValueValidator(100), validators.MinValueValidator(0)], default=0.5)
-    dew_point = models.FloatField(null=True, blank=True, validators=[validators.MaxValueValidator(100), validators.MinValueValidator(0)], default=0.5)
+    coin = models.CharField(null=False, blank=False, max_length=255)
+    config = models.TextField(blank=True, default=config_default)
 
     graphql_fields = [
-        GraphQLString("title"),
-        GraphQLString("topic"),
-        GraphQLString("temperature"),
-        GraphQLString("humidity"),
+        GraphQLString("coin"),
+        GraphQLString("config"),
     ]
 
     search_fields = [
-        index.SearchField("title"),
-        index.SearchField("topic"),
-        index.SearchField("temperature"),
-        index.SearchField("humidity"),
-        index.SearchField("dew_point"),
+        index.SearchField("coin"),
+        index.SearchField("config"),
     ]
 
     panels = [
-        FieldPanel("title"),
-        FieldPanel("topic"),
-        FieldPanel("temperature"),
-        FieldPanel("humidity"),
-        FieldPanel("dew_point"),
+        FieldPanel("coin"),
+        FieldPanel("config"),
     ]
 
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.coin}"
 
 
 # SPDX-License-Identifier: (EUPL-1.2)

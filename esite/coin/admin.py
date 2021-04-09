@@ -10,8 +10,8 @@ from .models import Sensor
 
 class Sensoradmin(ModelAdmin):
     model = Sensor
-    menu_label = "Sensors"
-    menu_icon = "fa-lightbulb-o"
+    menu_label = "Coin"
+    menu_icon = "fa-btc"
     menu_order = 290
     add_to_settings_menu = False
     exclude_from_explorer = False

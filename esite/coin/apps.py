@@ -3,7 +3,7 @@ from django.apps import AppConfig
 
 # This defines the name of the app.
 class Config(AppConfig):
-    name = "core"
+    name = "coin"
 
 
 # SPDX-License-Identifier: (EUPL-1.2)

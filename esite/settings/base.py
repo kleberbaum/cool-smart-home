@@ -30,10 +30,9 @@ INSTALLED_APPS = [
     "esite.images",
     "esite.navigation",
     "esite.search",
-    "esite.light",
-    "esite.sensor",
     # Our own pages
-    "esite.colorfield",
+    "esite.waveater",
+    "esite.coin",
     "esite.home",
     # Django core apps
     "django.contrib.admin",
@@ -157,7 +156,6 @@ BIFROST_APPS = {
     "images": "",
     "user": "",
     "navigation": "",
-    "utils": "",
 }
 
 BIFROST_ADD_SEARCH_HIT = True
