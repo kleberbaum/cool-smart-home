@@ -1,44 +1,45 @@
 <p align="center">
   <a href="https://snek.at/" target="_blank" rel="noopener noreferrer">
-    <img src="https://avatars2.githubusercontent.com/u/55870326?s=400&u=c6c7f06305ddc94747d474850fde7b2044f53838&v=4" alt="SNEK Logo" height="150">
+    <img src="https://user-images.githubusercontent.com/26285351/114187769-a8958b80-9948-11eb-9580-d5421fbfd579.png" alt="SNEK Logo" height="150">
   </a>
+
 </p>
 
-<h3 align="center">SNEK - Offical Wagtail Template</h3>
+<h3 align="center">SNEK - IoT Controller</h3>
 
 <p align="center">
-  This is the official template repository for Wagtail projects of SNEK.
+  This is the official repository for the smart home projects of SNEK.
   <br>
   <br>
-  <a href="https://github.com/snek-at/wagtail-template/issues/new?template=bug_report.md">Report bug</a>
+  <a href="https://github.com/kleberbaum/smart-home/issues/new?template=bug_report.md">Report bug</a>
   ·
-  <a href="https://github.com/snek-at/wagtail-template/issues/new?template=feature_request.md">Request feature</a>
-  ·
-  <a href="https://www.overleaf.com/read/bcxwhwbhrmps">Documentation</a>
+  <a href="https://github.com/kleberbaum/smart-home/issues/new?template=feature_request.md">Request feature</a>
   <br>
   <br>
-  <a href="https://www.codacy.com/app/kleberbaum/wagtail-template">
-    <img src="https://api.codacy.com/project/badge/Grade/20d80a1790c44c90a3376e77d34a99ff" />
-  </a>
+  <img src="https://api.codacy.com/project/badge/Grade/20d80a1790c44c90a3376e77d34a99ff" />
 </p>
 
 ## Table of contents
 
--   [Table of contents](#table-of-contents)
--   [Quick start](#quick-start)
--   [Setup with Docker](#setup-with-docker)
-    -   [Dependencies](#dependencies)
-    -   [Installation](#installation)
-    -   [Debugging](#debugging)
--   [Setup with Python Virtual Environment](#setup-with-python-virtual-environment)
-    -   [Dependencies](#dependencies-1)
-    -   [Installation](#installation-1)
--   [Bugs and feature requests](#bugs-and-feature-requests)
--   [Contributing](#contributing)
--   [Versioning](#versioning)
--   [Creators](#creators)
--   [Thanks](#thanks)
--   [Copyright and license](#copyright-and-license)
+- [Table of contents](#table-of-contents)
+- [Quick start](#quick-start)
+- [Setup with Docker](#setup-with-docker)
+  - [Dependencies](#dependencies)
+  - [Installation](#installation)
+  - [Debugging](#debugging)
+- [Setup with Python Virtual Environment](#setup-with-python-virtual-environment)
+  - [Dependencies](#dependencies-1)
+  - [Installation](#installation-1)
+- [Bugs and feature requests](#bugs-and-feature-requests)
+- [Contributing](#contributing)
+- [Versioning](#versioning)
+- [Device Setup](#device-setup)
+- [Mqtt](#mqtt)
+- [REST](#rest)
+- [ESPHome](#esphome)
+- [Creators](#creators)
+- [Thanks](#thanks)
+- [Copyright and license](#copyright-and-license)
 
 ## [](#quick-start)Quick start
 
@@ -59,8 +60,8 @@ Several quick start options are available:
 Run the following commands:
 
 ```bash
-git clone https://github.com/snek-at/wagtail-template.git
-cd Wagtail-Template
+git clone https://gitlab.htl-villach.at/kleberf/smarthome.git
+cd IoT-Controller
 docker-compose up --build -d
 docker-compose up
 ```
@@ -145,6 +146,27 @@ For transparency into our release cycle and in striving to maintain backward com
 maintained under [the Semantic Versioning guidelines](https://semver.org/). Sometimes we screw up, but we adhere to
 those rules whenever possible.
 
+## [](#device-setup)Device Setup
+![image](https://user-images.githubusercontent.com/26285351/114192059-5acf5200-994d-11eb-9f60-2aaf44cc45ee.png)
+
+## [](#mqtt)Mqtt
+
+10 Minuten Setup
+Funktioniert nur mit esp8266 basierenden Geräten
+Neue Tuya Geräte basieren auf WB3S
+Wichtig anderer Client im Setup WLAN
+
+![image](https://user-images.githubusercontent.com/26285351/114192082-5f940600-994d-11eb-86f9-673bb76614d3.png)
+![image](https://user-images.githubusercontent.com/26285351/114192258-90743b00-994d-11eb-993e-bb7d57836457.png)
+![image](https://user-images.githubusercontent.com/26285351/114192275-9702b280-994d-11eb-9c7c-4f1021d76501.png)
+![image](https://user-images.githubusercontent.com/26285351/114192283-99fda300-994d-11eb-9a04-f3a9ebd126e7.png)
+![image](https://user-images.githubusercontent.com/26285351/114192306-9ff38400-994d-11eb-9b79-e062208e3708.png)
+
+
+## [](#rest)REST
+
+## [](#esphome)ESPHome
+
 ## [](#creators)Creators
 
 <table border="0">
@@ -154,15 +176,9 @@ those rules whenever possible.
     	        <img src="https://avatars.githubusercontent.com/kleberbaum?s=100" alt="Avatar kleberbaum">
             </a>
         </td>
-    	<td>
-    	    <a href="https://github.com/schettn">
-                <img src="https://avatars.githubusercontent.com/schettn?s=100" alt="Avatar schettn">
-            </a>
-    	</td>
     </tr>
     <tr>
         <td><a href="https://github.com/kleberbaum">Florian Kleber</a></td>
-        <td><a href="https://github.com/schettn">Nico Schett</a></td>
     </tr>
 </table>
 
