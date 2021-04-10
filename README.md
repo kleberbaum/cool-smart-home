@@ -193,16 +193,41 @@ We can now proceed by configuring the wifi settings of our lightbulb, by connect
 Next we have to enter our ESPhome dashboard to configure our lightbulb 
 
 
-
-
 After Configuration the Lightbulb can be found in the DHCP leases of your Router. We are now able to compile our firmware in Tasmota and flash it on oure lightbulb in the Tasmota webinterface. 
 ![image](https://user-images.githubusercontent.com/26285351/114256397-4aed5780-99b9-11eb-8549-d243ad8705a2.png)
 
 ![image](https://user-images.githubusercontent.com/26285351/114255946-fe088180-99b6-11eb-91ae-ad629613acd5.png)
 ![image](https://user-images.githubusercontent.com/26285351/114256436-8daf2f80-99b9-11eb-9393-4b303cb25c1c.png)
 
+After succesfully flashing the lightbulb with ESPhome we are now able to control it in the ESPhome dashboard. For example we are now able to make OTA (over the air) updates.
 
+![image](https://user-images.githubusercontent.com/26285351/114256695-707b6080-99bb-11eb-84e1-aad01bff3ea7.png)
 
+Congratulation this lightbulb can now be used with this project. 
+
+### ESP32
+In order to use a ESP32 with this project we need to flash Tasmota onto it. A ESP32 can be flashed via console or USB console port.
+
+In this gudie I will show how this can be accomplished using the official Espressif Flash Download Tool.
+https://www.espressif.com/en/support/download/all
+
+Furthermore we need to download Tasmota and flash config from https://github.com/techiesms/TASMOTA-on-ESP32
+
+In order to work we have to set the right rigister adresses and adjust the BAUD rate to 921600.
+
+![image](https://user-images.githubusercontent.com/26285351/114257249-d61d1c00-99be-11eb-94ad-c658bbd3befa.png)
+
+After we sucessfully flashing our ESP32 we have to set the Network config. This can be done by issuing two commands via COM.
+
+```
+SSID1 your-ap-name
+Password1 your-ap-passwd
+```
+Resulting in the folloing output.
+
+![image](https://user-images.githubusercontent.com/26285351/114257425-4aa48a80-99c0-11eb-8ce2-35dc0fc65a82.png)
+
+Congratulation this ESP32 can now be used with this project. 
 
 ## [](#mqtt)Mqtt
 
