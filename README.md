@@ -144,16 +144,65 @@ maintained under [the Semantic Versioning guidelines](https://semver.org/). Some
 those rules whenever possible.
 
 ## [](#device-setup)Device Setup
-![image](https://user-images.githubusercontent.com/26285351/114192059-5acf5200-994d-11eb-9f60-2aaf44cc45ee.png)
-10 Minuten Setup
-Funktioniert nur mit esp8266 basierenden Geräten
-Neue Tuya Geräte basieren auf WB3S
-Wichtig anderer Client im Setup WLAN
 
-![image](https://user-images.githubusercontent.com/26285351/114192258-90743b00-994d-11eb-993e-bb7d57836457.png)
-![image](https://user-images.githubusercontent.com/26285351/114192275-9702b280-994d-11eb-9c7c-4f1021d76501.png)
-![image](https://user-images.githubusercontent.com/26285351/114192283-99fda300-994d-11eb-9a04-f3a9ebd126e7.png)
-![image](https://user-images.githubusercontent.com/26285351/114192306-9ff38400-994d-11eb-9b79-e062208e3708.png)
+### Tuya Lightbulb
+
+Prerequisite
+- Raspberry Pi 3 or 4 
+- ESP8266 based Tuya Lightbulb
+- Smartphone
+- ESPHome dashboard
+
+The Raspberry Pi should be set up with a Debian based distro. In this guide I will use Hypriot: https://blog.hypriot.com/downloads/
+The Image can be flashed onto an micro SD cart with Rufus: https://rufus.ie/en_US/
+
+Get your Raspberry Pi IP from the DHCP leases of Router.
+![chrome_2021-04-10_03-40-08](https://user-images.githubusercontent.com/26285351/114254265-9d754680-99ae-11eb-9fe8-12032e5fbe75.png)
+
+```bash
+ssh pirate@$yourRaspberryPiIP # The default password is "hypriot"
+sudo -i
+apt update
+apt dist-upgrade
+apt install git
+git clone https://github.com/ct-Open-Source/tuya-convert.git
+```
+```bash
+cd tuya-convert/
+./install_prereq.sh
+./start_flash.sh
+```
+Connect your smartphone to vtrust-flash. And put your lightbulb in pairing mode by truning it on-off 3 times in a row.
+![image](https://user-images.githubusercontent.com/26285351/114254629-cf87a800-99b0-11eb-9477-00ee0b92663b.png)
+
+The existing Tuya firmware is backuped and can be restored at anytime.
+![image](https://user-images.githubusercontent.com/26285351/114254656-f47c1b00-99b0-11eb-9855-72ed05d9188f.png)
+
+Last but not least choose the firmware. In this guide I will use **2** tasmota.bin.
+![image](https://user-images.githubusercontent.com/26285351/114254993-ea5b1c00-99b2-11eb-8570-3537169d15cd.png)
+
+Lern more about Tasmota at https://github.com/arendst/Tasmota
+
+Congratulations! After under 10 minutes we sucsessfully flashed our bulb with Tasmota.
+![image](https://user-images.githubusercontent.com/26285351/114255296-d44e5b00-99b4-11eb-9129-d73e0a263009.png)
+
+We can now proceed by configuring the wifi settings of our lightbulb, by connecting to the Tasmota configuration hotspot.
+![image](https://user-images.githubusercontent.com/26285351/114255768-af0e1c80-99b5-11eb-80e0-3b86ca0c188b.png)
+
+
+Next we have to enter our ESPhome dashboard to configure our lightbulb 
+
+
+
+
+After Configuration the Lightbulb can be found in the DHCP leases of your Router. We are now able to compile our firmware in Tasmota and flash it on oure lightbulb in the Tasmota webinterface. 
+![image](https://user-images.githubusercontent.com/26285351/114256397-4aed5780-99b9-11eb-8549-d243ad8705a2.png)
+
+![image](https://user-images.githubusercontent.com/26285351/114255946-fe088180-99b6-11eb-91ae-ad629613acd5.png)
+![image](https://user-images.githubusercontent.com/26285351/114256436-8daf2f80-99b9-11eb-9393-4b303cb25c1c.png)
+
+
+
 
 ## [](#mqtt)Mqtt
 
