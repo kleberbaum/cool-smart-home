@@ -231,19 +231,39 @@ Next we have to build the circuit. **Red button GPIO13**; **Red LED GPIO14**; **
 
 ![image](https://user-images.githubusercontent.com/26285351/114258232-6f4f3100-99c5-11eb-9db5-bf8792d84a63.png)
 
-Now the GIPO pins and MQTT can be configured in the Tasmota webinterfece.
+Now the GIPO pins and MQTT can be configured in the Tasmota webinterfece. The IP frcan be found in the DHCP leases of Router.
+![image](https://user-images.githubusercontent.com/26285351/114258849-c5be6e80-99c9-11eb-8d3b-4a53ef086990.png)
+
 
 ![image](https://user-images.githubusercontent.com/26285351/114257787-7e80af80-99c2-11eb-80c5-ca702b4d0464.png)
 ![image](https://user-images.githubusercontent.com/26285351/114257843-e59e6400-99c2-11eb-9169-49961ca9e299.png)
 
 
-Congratulation this ESP32 can now be used with this project. 
+Congratulation this ESP32 can now be used with this project.
 
 
 ## [](#mqtt)Mqtt
+For this project to work a MQTT broker has to be installed on 10.1.0.1. The IP can be adjustet in the ESPhome firmware and ESP32 Tasmota.
 
+For this guide I will be using RabbitMQ. The installation is pretty straight forward.
 
+```bash
+docker run -it --name home-rabbitmq -p 5672:5672 -p 15672:15672 -p 1883:1883 -p 15675:15675 -v rabbitmq-conf:/etc/rabbitmq -v rabbitmq-data:/var/lib/rabbitmq rabbitmq:3 
+docker start -ai home-rabbitmq
+docker exec -it home-rabbitmq /bin/bash
+rabbitmq-plugins enable rabbitmq_management
+rabbitmq-plugins enable rabbitmq_mqtt
+rabbitmq-plugins enable rabbitmq_web_mqtt
+rabbitmq-plugins enable rabbitmq_amqp1_0
+rabbitmqctl add_user "mqtt-test"
+rabbitmqctl set_permissions -p "mqtt-test" ".*" ".*" ".*"
+rabbitmqctl set_permissions -p "admin" ".*" ".*" ".*"
+rabbitmqctl set_user_tags admin administrator
+rabbitmqctl clear_permissions -p "/" "guest"
+rabbitmqctl clear_user_tags guest administrator
+```
 
+With our Lightbulb firmware example the IR remotecontrol should already be working now.
 
 ## [](#rest)REST
 
