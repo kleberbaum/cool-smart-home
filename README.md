@@ -227,7 +227,18 @@ Resulting in the folloing output.
 
 ![image](https://user-images.githubusercontent.com/26285351/114257425-4aa48a80-99c0-11eb-8ce2-35dc0fc65a82.png)
 
+Next we have to build the circuit. **Red button GPIO13**; **Red LED GPIO14**; **Infrared Receiver VS1838B GPIO25**; **DHT11 Sensor GPIO26**
+
+![image](https://user-images.githubusercontent.com/26285351/114258232-6f4f3100-99c5-11eb-9db5-bf8792d84a63.png)
+
+Now the GIPO pins and MQTT can be configured in the Tasmota webinterfece.
+
+![image](https://user-images.githubusercontent.com/26285351/114257787-7e80af80-99c2-11eb-80c5-ca702b4d0464.png)
+![image](https://user-images.githubusercontent.com/26285351/114257843-e59e6400-99c2-11eb-9169-49961ca9e299.png)
+
+
 Congratulation this ESP32 can now be used with this project. 
+
 
 ## [](#mqtt)Mqtt
 
