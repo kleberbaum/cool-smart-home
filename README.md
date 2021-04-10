@@ -28,7 +28,7 @@
   - [Dependencies](#dependencies-1)
   - [Installation](#installation-1)
 - [Device Setup](#device-setup)
-- [Mqtt Setup](#mqtt)
+- [Mqtt Setup](#mqtt-setup)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
