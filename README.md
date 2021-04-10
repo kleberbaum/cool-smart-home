@@ -27,16 +27,18 @@
 - [Setup with Python Virtual Environment](#setup-with-python-virtual-environment)
   - [Dependencies](#dependencies-1)
   - [Installation](#installation-1)
+- [Device Setup](#device-setup)
+- [Mqtt Setup](#mqtt)
 - [Bugs and feature requests](#bugs-and-feature-requests)
 - [Contributing](#contributing)
 - [Versioning](#versioning)
-- [Device Setup](#device-setup)
-- [Mqtt](#mqtt)
-- [REST](#rest)
-- [ESPHome](#esphome)
 - [Creators](#creators)
 - [Thanks](#thanks)
 - [Copyright and license](#copyright-and-license)
+
+## [](#overview)Overview
+
+
 
 ## [](#quick-start)Quick start
 
@@ -118,30 +120,6 @@ To set up your database and load initial data, run the following commands:
 
     ./manage.py migrate
     ./manage.py runserver
-    
-## [](#bug-and-feature-requests)Bugs and feature requests
-
-Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not
-addressed yet, [please open a new issue](https://github.com/snek-at/wagtail-template/issues/new/choose).
-
-## [](#contributing)Contributing
-
-![GitHub last commit](https://img.shields.io/github/last-commit/snek-at/wagtail-template)
-![GitHub issues](https://img.shields.io/github/issues-raw/snek-at/wagtail-template)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/snek-at/wagtail-template?color=green)
-
-Please read through our
-[contributing guidelines](https://github.com/snek-at/wagtail-template/blob/master/CONTRIBUTING.md). Included are
-directions for opening issues, coding standards, and notes on development.
-
-All code should conform to the [Code Guide](https://github.com/snek-at/tonic/blob/master/STYLE_GUIDE.md), maintained by
-[SNEK](https://github.com/snek-at).
-
-## [](#versioning)Versioning
-
-For transparency into our release cycle and in striving to maintain backward compatibility, this repository is
-maintained under [the Semantic Versioning guidelines](https://semver.org/). Sometimes we screw up, but we adhere to
-those rules whenever possible.
 
 ## [](#device-setup)Device Setup
 
@@ -157,6 +135,7 @@ The Raspberry Pi should be set up with a Debian based distro. In this guide I wi
 The Image can be flashed onto an micro SD cart with Rufus: https://rufus.ie/en_US/
 
 Get your Raspberry Pi IP from the DHCP leases of Router.
+
 ![chrome_2021-04-10_03-40-08](https://user-images.githubusercontent.com/26285351/114254265-9d754680-99ae-11eb-9fe8-12032e5fbe75.png)
 
 ```bash
@@ -173,20 +152,25 @@ cd tuya-convert/
 ./start_flash.sh
 ```
 Connect your smartphone to vtrust-flash. And put your lightbulb in pairing mode by truning it on-off 3 times in a row.
+
 ![image](https://user-images.githubusercontent.com/26285351/114254629-cf87a800-99b0-11eb-9477-00ee0b92663b.png)
 
 The existing Tuya firmware is backuped and can be restored at anytime.
+
 ![image](https://user-images.githubusercontent.com/26285351/114254656-f47c1b00-99b0-11eb-9855-72ed05d9188f.png)
 
 Last but not least choose the firmware. In this guide I will use **2** tasmota.bin.
+
 ![image](https://user-images.githubusercontent.com/26285351/114254993-ea5b1c00-99b2-11eb-8570-3537169d15cd.png)
 
 Lern more about Tasmota at https://github.com/arendst/Tasmota
 
 Congratulations! After under 10 minutes we sucsessfully flashed our bulb with Tasmota.
+
 ![image](https://user-images.githubusercontent.com/26285351/114255296-d44e5b00-99b4-11eb-9129-d73e0a263009.png)
 
 We can now proceed by configuring the wifi settings of our lightbulb, by connecting to the Tasmota configuration hotspot.
+
 ![image](https://user-images.githubusercontent.com/26285351/114255768-af0e1c80-99b5-11eb-80e0-3b86ca0c188b.png)
 
 
@@ -242,7 +226,7 @@ Now the GIPO pins and MQTT can be configured in the Tasmota webinterfece. The IP
 Congratulation this ESP32 can now be used with this project.
 
 
-## [](#mqtt)Mqtt
+## [](#mqtt)Mqtt Setup
 For this project to work a MQTT broker has to be installed on 10.1.0.1. The IP can be adjustet in the ESPhome firmware and ESP32 Tasmota.
 
 For this guide I will be using RabbitMQ. The installation is pretty straight forward.
@@ -262,12 +246,34 @@ rabbitmqctl set_user_tags admin administrator
 rabbitmqctl clear_permissions -p "/" "guest"
 rabbitmqctl clear_user_tags guest administrator
 ```
+ We can now make use of our MQTT server.
+![image](https://user-images.githubusercontent.com/26285351/114261096-096ca480-99d9-11eb-8761-6dffa31262fc.png)
 
-With our Lightbulb firmware example the IR remotecontrol should already be working now.
+With our Lightbulb firmware example the ESP32 setup IR remotecontrol should already be working now.
 
-## [](#rest)REST
+## [](#bug-and-feature-requests)Bugs and feature requests
 
-## [](#esphome)ESPHome
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not
+addressed yet, [please open a new issue](https://github.com/snek-at/wagtail-template/issues/new/choose).
+
+## [](#contributing)Contributing
+
+![GitHub last commit](https://img.shields.io/github/last-commit/snek-at/wagtail-template)
+![GitHub issues](https://img.shields.io/github/issues-raw/snek-at/wagtail-template)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/snek-at/wagtail-template?color=green)
+
+Please read through our
+[contributing guidelines](https://github.com/snek-at/wagtail-template/blob/master/CONTRIBUTING.md). Included are
+directions for opening issues, coding standards, and notes on development.
+
+All code should conform to the [Code Guide](https://github.com/snek-at/tonic/blob/master/STYLE_GUIDE.md), maintained by
+[SNEK](https://github.com/snek-at).
+
+## [](#versioning)Versioning
+
+For transparency into our release cycle and in striving to maintain backward compatibility, this repository is
+maintained under [the Semantic Versioning guidelines](https://semver.org/). Sometimes we screw up, but we adhere to
+those rules whenever possible.
 
 ## [](#creators)Creators
 
@@ -293,5 +299,3 @@ to [contribute to our project](#contributing).
 
 ![GitHub repository license](https://img.shields.io/badge/license-EUPL--1.2-blue)
 
-SPDX-License-Identifier: (EUPL-1.2)
-Copyright © 2019-2020 Simon Prast
